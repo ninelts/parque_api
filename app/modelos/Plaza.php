@@ -16,8 +16,5 @@ class Plaza extends Model
 {
 		return $this->hasMany('App\modelos\BloqueReservaPlaza');
 }
-// public function bloqueReservas()
-// 	{
-// 			return $this->hasOneThrough('App\modelos\BloqueReservaPlaza','App\modelos\BloqueHorario' , 'id', 'bloque_horario_id', 'id');
-// 	}
+
 }

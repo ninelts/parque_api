@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('lector/qr', function () {
+    return view('lector');
+});
+
+

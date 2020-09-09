@@ -12,5 +12,10 @@ class CarritoCompra extends Model
 	protected $primaryKey = 'id';
 	protected $guarded = ['id'];
 	// public $with = ['bloque_horario' , 'precio'];
+	public function Productos()
+	{
+
+		return $this->hasMany(Productos::class, 'carrito_de_compra_id', 'id');
+	}
 
 }

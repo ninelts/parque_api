@@ -16,9 +16,9 @@ class CreateReservasTable extends Migration
         Schema::create('reservas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->tinyInteger('estado_reserva');
-            $table->bigInteger('plaza_id')->unsigned()->index();
-            $table->bigInteger('usuario_id')->unsigned()->index();
-            $table->bigInteger('bloque_horario_id')->unsigned()->index();
+            $table->bigInteger('carrito_de_compra_id')->unsigned()->index();
+            $table->bigInteger('usuario_id')->unsigned();
+            $table->bigInteger('productos_id')->unsigned()->index();
             $table->bigInteger('codigo_qr_id')->unsigned()->index();
             $table->dateTime('fecha_de_reserva');
             $table->datetime('activacion_reserva');
@@ -26,10 +26,11 @@ class CreateReservasTable extends Migration
             $table->timestamps();
             // $table->tinyInteger('codigo_qr_id')->nullable();//Temporalr
 
-            $table->foreign('usuario_id')->references('id')->on('users');
+            $table->foreign('carrito_de_compra_id')->references('id')->on('carrito_de_compra');
+            $table->foreign('productos_id')->references('id')->on('productos');
+
+            // $table->foreign('usuario_id')->references('id')->on('users');
             $table->foreign('codigo_qr_id')->references('id')->on('codigo_qr');
-            $table->foreign('plaza_id')->references('id')->on('plaza');
-            $table->foreign('bloque_horario_id')->references('id')->on('bloque_horario');
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCantidadProductosTable extends Migration
+class CreateProductosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateCantidadProductosTable extends Migration
      */
     public function up()
     {
-        Schema::create('cantidad_productos', function (Blueprint $table) {
+        Schema::create('productos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('bloque_plaza_reserva_id')->unsigned()->index();
             $table->bigInteger('carrito_de_compra_id')->unsigned()->index();
+            $table->dateTime('fecha_reserva');
             $table->timestamps();
 
 

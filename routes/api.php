@@ -23,15 +23,19 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('reservas' , 'api\ReservasController@reservas');
+Route::get('crear/reservas' , 'api\ReservasController@crearReservas');
+Route::get('listar/reservas', 'api\ReservasController@listarReservas');
+// Route::get('reservas', 'api\ReservasController@obtenerReservas');
+
 Route::get('login' , 'api\AuthController@login');
 Route::post('registro' , 'api\AuthController@register');
 
 Route::get('maquinas', 'api\MaquinasController@crearMaquinas');
-Route::get('reservas', 'api\ReservasController@obtenerReservas');
 Route::get('plazas', 'api\BloqueReservasPlazaController@crear');
 Route::get('reservas/obtener', 'api\BloqueReservasPlazaController@obtener');
 Route::post('app/carrito' , 'api\CarritoCompraController@insertCarritoCompra');
+
+Route::get('lector/qr/token', 'api\ReservasController@leerCodigoQr');
 
 
 /*Route::post('user' , 'api\AuthController@getAuthUser');*/

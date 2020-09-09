@@ -10,12 +10,12 @@ class BloqueReservaPlaza extends Model
   protected $table = 'bloque_reservas_plaza';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
-  public $with = ['bloque_horario' , 'precio'];
+  public $with = ['bloque_horario' , 'precio' , 'plaza'];
 
 
 public function plaza()
 {
-    return $this->belongsTo('\App\modelos\Plaza', 'plaza_id', 'id');
+    return $this->hasOne(Plaza::class, 'id' , 'plaza_id');
 }
 
 public function bloque_horario()

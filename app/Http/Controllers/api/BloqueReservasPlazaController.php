@@ -52,7 +52,7 @@ class BloqueReservasPlazaController extends Controller
       // $dias = Carbon::now()->daysInMonth;
       try {
 
-        $mes  = 8;
+        $mes  = 9;
         $anio = 2020;
         $carbon = Carbon::now();
         $cantidad_dias = $carbon->year($anio)->month($mes)->daysInMonth;
@@ -85,12 +85,6 @@ class BloqueReservasPlazaController extends Controller
                 ]);
              }
            }
-
-           // $table->tinyInteger('estado');
-           // $table->tinyInteger('disponible');
-           // $table->bigInteger('maquina_id');
-           // $table->bigInteger('bloque_horario_id');
-           // $table->dateTime('fecha');
 
          }
          return  response()->json([
